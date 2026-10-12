@@ -1,0 +1,15 @@
+{
+  "name": "it-demirbas",
+  "private": true,
+  "packageManager": "pnpm@12.10.1",
+  "scripts": {
+    "dev:api": "corepack pnpm --filter api dev",
+    "dev:web": "corepack pnpm --filter web dev",
+    "dev:mobile": "corepack pnpm --filter mobile start",
+    "build:api": "corepack pnpm --filter api build",
+    "build:web": "corepack pnpm --filter web build",
+    "db:generate": "corepack pnpm --filter api exec prisma generate",
+    "db:migrate": "corepack pnpm --filter api exec prisma migrate deploy",
+    "db:seed": "corepack pnpm --filter api exec prisma db seed"
+  }
+}

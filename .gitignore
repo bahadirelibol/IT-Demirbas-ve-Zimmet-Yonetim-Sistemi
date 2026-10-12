@@ -1,0 +1,40 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tsbuildinfo
+
+# Gizli ortam dosyaları. Örnek şablonlar repoda kalır.
+.env
+**/.env
+!**/.env.example
+.env*.local
+*.pem
+*.key
+*.jks
+*.p12
+*.p8
+
+# Yerel veritabanı ve araç artıkları
+data/
+
+# Derleme ve Expo önbelleği
+apps/api/dist
+apps/web/dist
+apps/mobile/.expo
+apps/mobile/dist
+apps/mobile/web-build
+.expo/
+expo-env.d.ts
+
+# Bu makineye özel notlar ve görev metni. Herkese açık repoda durmaz.
+CALISTIRMA.md
+PROJE-NEDIR.md
+Aday_Muhendis_Projesi_IT_Demirbas.pdf
+
+# İşletim sistemi ve editör
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

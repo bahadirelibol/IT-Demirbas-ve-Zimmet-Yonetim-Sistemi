@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Demirbaş Zimmet",
+    "slug": "demirbas-zimmet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kurum.demirbas",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Cihaz QR kodunu okutmak için kamera kullanılır."
+      }
+    },
+    "android": {
+      "package": "com.kurum.demirbas",
+      "permissions": ["android.permission.CAMERA"]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Cihaz QR kodunu okutmak için kamera kullanılır."
+        }
+      ]
+    ]
+  }
+}
