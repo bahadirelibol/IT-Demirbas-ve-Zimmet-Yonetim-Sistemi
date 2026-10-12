@@ -31,7 +31,7 @@ export function MyAssetsPage() {
           <Link
             key={assignment.id}
             to={`/assets/${assignment.asset?.id}`}
-            className="rounded-3xl border border-slate-200 bg-white p-5 hover:border-brand"
+            className="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/70 transition hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
           >
             <div className="flex items-start justify-between gap-3">
               <div>

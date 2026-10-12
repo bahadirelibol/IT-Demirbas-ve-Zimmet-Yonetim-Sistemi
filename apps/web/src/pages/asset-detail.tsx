@@ -58,7 +58,7 @@ export function AssetDetailPage() {
         Cihazlara dön
       </Link>
       <div className="grid gap-4 lg:grid-cols-[1fr_280px]">
-        <section className="rounded-3xl border border-slate-200 bg-white p-5">
+        <section className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-sm text-slate-500">{typeLabels[item.type]}</p>
@@ -118,13 +118,13 @@ export function AssetDetailPage() {
             ) : null}
           </div>
         </section>
-        <section className="rounded-3xl border border-slate-200 bg-white p-5 text-center">
+        <section className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5 text-center">
           <img src={item.qrDataUrl} alt={`${item.qrCode} QR kodu`} className="mx-auto h-52 w-52" />
           <p className="mt-2 font-mono text-sm">{item.qrCode}</p>
         </section>
       </div>
       <section className="grid gap-4 lg:grid-cols-2">
-        <article className="rounded-3xl border border-slate-200 bg-white p-5">
+        <article className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
           <h3 className="font-semibold text-ink">Zimmet geçmişi</h3>
           <ul className="mt-3 divide-y divide-slate-100">
             {item.assignments.length === 0 ? <li className="py-3 text-sm text-slate-500">Kayıt yok</li> : null}
@@ -139,7 +139,7 @@ export function AssetDetailPage() {
             ))}
           </ul>
         </article>
-        <article className="rounded-3xl border border-slate-200 bg-white p-5">
+        <article className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
           <h3 className="font-semibold text-ink">İşlem günlüğü</h3>
           <ul className="mt-3 divide-y divide-slate-100">
             {item.logs.map((log) => (

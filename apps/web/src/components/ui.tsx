@@ -9,13 +9,13 @@ import type {
 import { cn } from '../lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100',
   {
     variants: {
       variant: {
-        primary: 'bg-brand text-white hover:bg-teal-800',
-        secondary: 'border border-slate-200 bg-white text-ink hover:bg-slate-50',
-        danger: 'bg-rose-600 text-white hover:bg-rose-700',
+        primary: 'bg-brand text-white shadow-sm shadow-teal-900/15 hover:bg-teal-800',
+        secondary: 'border border-slate-200 bg-white text-ink shadow-sm shadow-slate-200/60 hover:bg-slate-50',
+        danger: 'bg-rose-600 text-white shadow-sm shadow-rose-900/15 hover:bg-rose-700',
         ghost: 'text-slate-600 hover:bg-slate-100',
       },
     },
@@ -36,7 +36,7 @@ export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
     <input
       {...props}
       className={cn(
-        'w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none ring-brand/30 placeholder:text-slate-400 focus:ring-4',
+        'w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm shadow-sm shadow-slate-200/50 outline-none ring-brand/20 transition placeholder:text-slate-400 focus:border-brand focus:ring-4',
         props.className,
       )}
     />
@@ -48,7 +48,7 @@ export function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
     <select
       {...props}
       className={cn(
-        'w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none ring-brand/30 focus:ring-4',
+        'w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm shadow-sm shadow-slate-200/50 outline-none ring-brand/20 transition focus:border-brand focus:ring-4',
         props.className,
       )}
     />
@@ -60,7 +60,7 @@ export function Textarea(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
     <textarea
       {...props}
       className={cn(
-        'min-h-24 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none ring-brand/30 focus:ring-4',
+        'min-h-24 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm shadow-sm shadow-slate-200/50 outline-none ring-brand/20 transition focus:border-brand focus:ring-4',
         props.className,
       )}
     />
@@ -106,8 +106,8 @@ export function Dialog({
 }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-ink/50 p-4 sm:items-center">
-      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-white p-5 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 backdrop-blur-sm sm:items-center">
+      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-slate-200/80 bg-white p-5 shadow-2xl shadow-slate-900/10">
         <div className="mb-4 flex items-center justify-between gap-3">
           <h2 className="text-lg font-semibold text-ink">{title}</h2>
           <button type="button" className="rounded-lg px-2 py-1 text-slate-500 hover:bg-slate-100" onClick={onClose}>

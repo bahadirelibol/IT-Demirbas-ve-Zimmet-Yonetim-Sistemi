@@ -24,7 +24,7 @@ export function ProtectedLayout() {
 
   return (
     <div className="min-h-screen lg:grid lg:grid-cols-[260px_1fr]">
-      <aside className={cn('fixed inset-y-0 left-0 z-40 w-72 bg-ink text-white lg:sticky lg:top-0 lg:block lg:h-screen lg:w-auto', open ? 'block' : 'hidden')}>
+      <aside className={cn('fixed inset-y-0 left-0 z-40 w-72 bg-gradient-to-b from-[#16375c] to-ink text-white lg:sticky lg:top-0 lg:block lg:h-screen lg:w-auto', open ? 'block' : 'hidden')}>
         <div className="flex h-full flex-col p-5">
           <div className="mb-8 flex items-start justify-between">
             <div>
@@ -45,8 +45,8 @@ export function ProtectedLayout() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm text-slate-200 hover:bg-white/10',
-                    isActive && 'bg-white/15 font-semibold text-white',
+                    'flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm text-slate-200 transition hover:bg-white/10',
+                    isActive && 'bg-white/15 font-semibold text-white shadow-sm ring-1 ring-white/15',
                   )
                 }
               >
@@ -55,7 +55,7 @@ export function ProtectedLayout() {
               </NavLink>
             ))}
           </nav>
-          <div className="mt-auto rounded-2xl bg-white/10 p-3">
+          <div className="mt-auto rounded-2xl bg-white/10 p-3 ring-1 ring-white/10">
             <p className="font-medium">{user.fullName}</p>
             <p className="text-xs text-slate-300">{roleLabels[user.role]}</p>
             <button
@@ -71,13 +71,13 @@ export function ProtectedLayout() {
       </aside>
       {open ? <button type="button" className="fixed inset-0 z-30 bg-black/40 lg:hidden" onClick={() => setOpen(false)} /> : null}
       <div className="min-w-0">
-        <header className="flex items-center gap-3 border-b border-slate-200 bg-white px-4 py-3 lg:hidden">
+        <header className="sticky top-0 z-20 flex items-center gap-3 border-b border-slate-200/80 bg-white/90 px-4 py-3 backdrop-blur lg:hidden">
           <button type="button" aria-label="Menüyü aç" className="rounded-xl border border-slate-200 p-2" onClick={() => setOpen(true)}>
             <Menu size={18} />
           </button>
           <span className="font-semibold text-ink">Demirbaş</span>
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <main className="mx-auto max-w-6xl px-4 py-6 sm:px-8 sm:py-8">
           <Outlet />
         </main>
       </div>

@@ -4,7 +4,7 @@ Kurum içindeki bilgisayar, sunucu, monitör ve diğer donanımların kaydı, du
 
 ## Ekran görüntüleri
 
-Giriş
+Giriş. Sol panelde Yapay Zeka ve Dijital Dönüşüm Koordinatörlüğü yazar.
 
 ![Giriş ekranı](docs/screenshots/giris.png)
 
@@ -28,7 +28,7 @@ Personelin kendi zimmetleri
 
 ![Zimmetlerim](docs/screenshots/zimmetlerim.png)
 
-Dar ekranda zimmet kartları
+Dar ekranda zimmet kartları alt alta durur
 
 ![Mobil web](docs/screenshots/mobil-zimmet.png)
 

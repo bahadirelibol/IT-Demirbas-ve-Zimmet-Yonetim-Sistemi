@@ -1,17 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   --color-ink: #0f2744;
   --color-brand: #0f766e;
-  --color-canvas: #f3f6fb;
+  --color-canvas: #f4f7fb;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--color-canvas);
+  background:
+    radial-gradient(900px 420px at 100% -8%, rgb(15 118 110 / 0.08), transparent 55%),
+    radial-gradient(700px 360px at -8% 0%, rgb(15 39 68 / 0.06), transparent 50%),
+    var(--color-canvas);
   color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.02em;
 }
 
 button,

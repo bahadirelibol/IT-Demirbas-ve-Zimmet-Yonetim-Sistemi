@@ -7,10 +7,10 @@ import type { DashboardStats } from '../lib/types';
 import { formatDateTime } from '../lib/utils';
 
 const cards = [
-  { key: 'total', label: 'Toplam cihaz', icon: Boxes, tone: 'bg-ink text-white' },
-  { key: 'faulty', label: 'Arızalı', icon: AlertTriangle, tone: 'bg-rose-50 text-rose-700' },
-  { key: 'inStock', label: 'Depoda', icon: Warehouse, tone: 'bg-sky-50 text-sky-700' },
-  { key: 'assigned', label: 'Zimmetli', icon: Laptop, tone: 'bg-teal-50 text-teal-800' },
+  { key: 'total', label: 'Toplam cihaz', icon: Boxes, tone: 'bg-ink text-white', chip: 'bg-white/15' },
+  { key: 'faulty', label: 'Arızalı', icon: AlertTriangle, tone: 'bg-rose-50 text-rose-700', chip: 'bg-rose-100/80' },
+  { key: 'inStock', label: 'Depoda', icon: Warehouse, tone: 'bg-sky-50 text-sky-700', chip: 'bg-sky-100/80' },
+  { key: 'assigned', label: 'Zimmetli', icon: Laptop, tone: 'bg-teal-50 text-teal-800', chip: 'bg-teal-100/80' },
 ] as const;
 
 export function DashboardPage() {
@@ -33,15 +33,17 @@ export function DashboardPage() {
       </div>
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {cards.map((card) => (
-          <article key={card.key} className={`rounded-3xl p-5 ${card.tone}`}>
-            <card.icon size={20} />
-            <p className="mt-4 text-3xl font-semibold">{stats[card.key]}</p>
+          <article key={card.key} className={`rounded-3xl p-5 shadow-sm ring-1 ring-black/5 ${card.tone}`}>
+            <span className={`inline-flex rounded-2xl p-2 ${card.chip}`}>
+              <card.icon size={18} />
+            </span>
+            <p className="mt-4 text-3xl font-semibold tracking-tight">{stats[card.key]}</p>
             <p className="text-sm opacity-80">{card.label}</p>
           </article>
         ))}
       </section>
       <section className="grid gap-4 lg:grid-cols-[1fr_1.3fr]">
-        <article className="rounded-3xl border border-slate-200 bg-white p-5">
+        <article className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
           <h3 className="font-semibold text-ink">Türe göre</h3>
           <div className="mt-4 space-y-3">
             {stats.typeCounts.map((item) => (
@@ -61,7 +63,7 @@ export function DashboardPage() {
           </div>
           <p className="mt-4 text-sm text-slate-500">Hurda: {stats.retired}</p>
         </article>
-        <article className="rounded-3xl border border-slate-200 bg-white p-5">
+        <article className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
           <h3 className="font-semibold text-ink">Son işlemler</h3>
           <ul className="mt-4 divide-y divide-slate-100">
             {stats.recentLogs.map((log) => (

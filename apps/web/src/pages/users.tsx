@@ -63,7 +63,7 @@ export function UsersPage() {
         </Button>
       </div>
       <Input placeholder="Ad veya e-posta ara" value={search} onChange={(event) => { setSearch(event.target.value); setPage(1); }} />
-      <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white">
+      <div className="overflow-x-auto rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70">
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
@@ -77,7 +77,7 @@ export function UsersPage() {
           </thead>
           <tbody>
             {users.data?.data.map((person) => (
-              <tr key={person.id} className="border-t border-slate-100">
+              <tr key={person.id} className="border-t border-slate-100 transition hover:bg-slate-50/80">
                 <td className="px-4 py-3 font-medium">{person.fullName}</td>
                 <td className="px-4 py-3">{person.email}</td>
                 <td className="px-4 py-3">{roleLabels[person.role]}</td>
@@ -122,7 +122,7 @@ export function UsersPage() {
         <Pager page={users.data.meta.page} pageCount={users.data.meta.pageCount} total={users.data.meta.total} onPage={setPage} />
       ) : null}
 
-      <section className="rounded-3xl border border-slate-200 bg-white p-5">
+      <section className="rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-5">
         <h3 className="font-semibold text-ink">Departmanlar</h3>
         <form
           className="mt-3 flex flex-col gap-2 sm:flex-row"

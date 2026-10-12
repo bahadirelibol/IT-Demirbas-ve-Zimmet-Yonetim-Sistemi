@@ -75,7 +75,7 @@ export function AssetsPage() {
           </Button>
         ) : null}
       </div>
-      <div className="grid gap-3 rounded-3xl border border-slate-200 bg-white p-4 md:grid-cols-4">
+      <div className="grid gap-3 rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-4 md:grid-cols-4">
         <div className="relative md:col-span-1">
           <Search className="pointer-events-none absolute left-3 top-3 text-slate-400" size={16} />
           <Input className="pl-9" placeholder="Marka, model, seri no, QR" value={search} onChange={(event) => setSearch(event.target.value)} />
@@ -109,7 +109,7 @@ export function AssetsPage() {
       </div>
       {assets.isLoading ? <p className="text-slate-500">Yükleniyor...</p> : null}
       {assets.isError ? <p className="text-rose-600">Cihaz listesi alınamadı.</p> : null}
-      <div className="hidden overflow-hidden rounded-3xl border border-slate-200 bg-white md:block">
+      <div className="hidden overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 md:block">
         <table className="w-full text-left text-sm">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
@@ -122,7 +122,7 @@ export function AssetsPage() {
           </thead>
           <tbody>
             {assets.data?.data.map((asset) => (
-              <tr key={asset.id} className="border-t border-slate-100">
+              <tr key={asset.id} className="border-t border-slate-100 transition hover:bg-slate-50/80">
                 <td className="px-4 py-3">
                   <Link className="font-medium text-ink hover:underline" to={`/assets/${asset.id}`}>
                     {asset.brand} {asset.model}
@@ -145,7 +145,7 @@ export function AssetsPage() {
       </div>
       <div className="space-y-3 md:hidden">
         {assets.data?.data.map((asset) => (
-          <Link key={asset.id} to={`/assets/${asset.id}`} className="block rounded-3xl border border-slate-200 bg-white p-4">
+          <Link key={asset.id} to={`/assets/${asset.id}`} className="block rounded-3xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/70 p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="font-semibold text-ink">

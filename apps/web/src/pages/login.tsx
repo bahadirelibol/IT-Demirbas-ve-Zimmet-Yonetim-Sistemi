@@ -26,9 +26,10 @@ export function LoginPage() {
 
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
-      <section className="hidden flex-col justify-between bg-ink p-10 text-white lg:flex">
-        <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-teal-200">Yapay Zeka ve Dijital Dönüşüm</p>
+      <section className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-[#16375c] via-ink to-[#0c1c33] p-10 text-white lg:flex">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-teal-300/20 blur-3xl" />
+        <div className="relative">
+          <p className="text-sm uppercase tracking-[0.14em] text-teal-200">Yapay Zeka ve Dijital Dönüşüm Koordinatörlüğü</p>
           <h1 className="mt-6 max-w-md text-4xl font-semibold leading-tight">
             IT Demirbaş ve Zimmet Yönetim Sistemi
           </h1>
@@ -36,11 +37,10 @@ export function LoginPage() {
             Bilgisayar, sunucu ve monitörlerin kaydı, durum takibi ve personele zimmeti tek panelde.
           </p>
         </div>
-        <p className="text-sm text-slate-400">Kurum içi envanter</p>
       </section>
       <section className="flex items-center justify-center px-4 py-10">
         <form
-          className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="w-full max-w-md rounded-3xl border border-slate-200/80 bg-white p-6 shadow-xl shadow-slate-300/40"
           onSubmit={form.handleSubmit(async (values) => {
             try {
               await login(values.email, values.password);
