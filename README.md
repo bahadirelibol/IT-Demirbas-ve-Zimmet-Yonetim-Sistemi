@@ -4,7 +4,7 @@ Kurum içindeki bilgisayar, sunucu, monitör ve diğer donanımların kaydı, du
 
 ## Ekran görüntüleri
 
-Giriş. Sol panelde Yapay Zeka ve Dijital Dönüşüm Koordinatörlüğü yazar.
+Giriş.
 
 ![Giriş ekranı](docs/screenshots/giris.png)
 
